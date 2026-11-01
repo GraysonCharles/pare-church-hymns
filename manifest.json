@@ -1,0 +1,10 @@
+{
+  "name": "Pare Church Hymns",
+  "short_name": "Pare Hymns",
+  "description": "Kitabu cha nyimbo za Kikristo za Kipare",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#174d3b",
+  "theme_color": "#174d3b",
+  "orientation": "portrait"
+}

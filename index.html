@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitabu cha Nyimbo za Kipare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#174d3b">
+</head>
+<body>
+
+    <button id="menuButton">☰</button>
+
+    <aside id="sidebar">
+        <h2>♫ Pare Hymns</h2>
+        <button id="homeButton">🏠 Home</button>
+        <button id="searchButton">🔍 Search</button>
+        <button id="favoriteButton">❤️ Favorites</button>
+        <button id="aboutButton">ℹ️ About App</button>
+        <button id="darkModeButton">🌙 Dark Mode</button>
+    </aside>
+
+    <div id="mainContent">
+
+        <header>
+            <h1>♫ Kitabu cha Nyimbo</h1>
+            <p>Nyimbo za Kipare</p>
+        </header>
+
+        <main>
+            <main>
+
+    <!-- HOME PAGE -->
+    <section id="homePage">
+
+        <h2>Karibu</h2>
+        <p>Chagua wimbo unaotaka kuimba</p>
+
+        <input type="search" id="searchInput"
+               placeholder="Tafuta wimbo...">
+
+        <section id="songList"></section>
+
+    </section>
+
+    <!-- SONG READER -->
+    <section id="songReader" style="display:none;">
+
+        <button id="backButton">← Rudi kwenye nyimbo</button>
+
+        <h2 id="songTitle"></h2>
+
+       <div class="image-navigation">
+    <button id="prevButton">←</button>
+
+    <img id="songImage" src="" alt="Wimbo">
+
+    <button id="nextButton">→</button>
+</div>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section id="aboutPage" style="display:none;">
+
+        <h2>About Pare Church Hymns</h2>
+
+        <p>
+            Karibu kwenye Pare Church Hymns.
+            Hii ni programu inayolenga kuhifadhi na kurahisisha
+            upatikanaji wa nyimbo za Kikristo za Kipare.
+        </p>
+
+        <h3>Kusudi la App</h3>
+
+        <p>
+            Kusaidia waumini kupata nyimbo kwa urahisi,
+            kujifunza nyimbo na kutumia kitabu cha nyimbo
+            hata bila internet.
+        </p>
+
+        <h3>App Information</h3>
+
+        <p>App Name: Pare Church Hymns</p>
+        <p>Version: 1.0</p>
+        <p>Platform: Offline Application</p>
+
+    </section>
+
+</main>
+        </main>
+
+    </div>
+
+    <script src="songs.js"></script>
+    <script src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+        navigator.serviceWorker.register("./service-worker.js")
+        .then(function() {
+            console.log("Pare Hymns is ready offline!");
+        })
+        .catch(function(error) {
+            console.log("Service Worker Error:", error);
+        });
+    });
+}
+</script>
+</body>
+</html>
