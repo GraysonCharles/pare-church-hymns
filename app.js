@@ -123,7 +123,7 @@ homeButton.addEventListener("click", function() {
 
     searchInput.value = "";
 
-    displaySongs(songs.filter(song => song.title.trim() !== ""));
+    displaySongs(songs);
 
     sidebar.classList.remove("active");
 });
