@@ -2253,7 +2253,7 @@ const songs = [
         subtitle: "",
         image: "images/PARE CHURCH HYMNS-322.jpg",
         searchText: ""
-    }
+    },
 {
         id: 323,
         title: "",
