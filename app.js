@@ -9,6 +9,7 @@ const prevButton = document.getElementById("prevButton");
 const nextButton = document.getElementById("nextButton");
 
 let currentSongIndex = 0;
+const availableSongs = songs.filter(song => song.title.trim() !== "");
 // FAVORITES SYSTEM
 let favorites = JSON.parse(localStorage.getItem("pareFavorites")) || [];
 let showFavorites = false;
@@ -71,10 +72,10 @@ function openSong(song) {
     songReader.style.display = "block";
     songTitle.textContent = "Wimbo Na. " + song.id + " - " + song.title;
     songImage.src = song.image;
-currentSongIndex = songs.findIndex(item => item.id === song.id);
+currentSongIndex = availableSongs.findIndex(item => item.id === song.id);
 
-prevButton.disabled = currentSongIndex === 0;
-nextButton.disabled = currentSongIndex === songs.length - 1;
+prevButton.disabled = currentSongIndex <= 0;
+nextButton.disabled = currentSongIndex >= availableSongs.length - 1;
 }
 
 backButton.addEventListener("click", function() {
@@ -108,24 +109,29 @@ menuButton.addEventListener("click", function() {
 });
 
 // HOME BUTTON
-const homeButton = document.getElementById("homeButton");
-
 homeButton.addEventListener("click", function() {
+    showFavorites = false;
+
     songReader.style.display = "none";
+    aboutPage.style.display = "none";
+
     songList.style.display = "grid";
     searchInput.style.display = "block";
 
     searchInput.value = "";
-    displaySongs(songs);
+
+    displaySongs(songs.filter(song => song.title.trim() !== ""));
 
     sidebar.classList.remove("active");
 });
 
 // SEARCH BUTTON
-const searchButton = document.getElementById("searchButton");
-
 searchButton.addEventListener("click", function() {
+    showFavorites = false;
+
     songReader.style.display = "none";
+    aboutPage.style.display = "none";
+
     songList.style.display = "grid";
     searchInput.style.display = "block";
 
@@ -134,17 +140,16 @@ searchButton.addEventListener("click", function() {
     sidebar.classList.remove("active");
 });
 // FAVORITES BUTTON
-const favoriteButton = document.getElementById("favoriteButton");
-
 favoriteButton.addEventListener("click", function() {
     showFavorites = true;
 
     songReader.style.display = "none";
+    aboutPage.style.display = "none";
     searchInput.style.display = "none";
     songList.style.display = "grid";
 
     const favoriteSongs = songs.filter(function(song) {
-        return favorites.includes(song.id);
+        return favorites.includes(song.id) && song.title.trim() !== "";
     });
 
     displaySongs(favoriteSongs);
@@ -193,12 +198,12 @@ aboutButton.addEventListener("click", function() {
 });
 prevButton.addEventListener("click", function() {
     if (currentSongIndex > 0) {
-        openSong(songs[currentSongIndex - 1]);
+        openSong(availableSongs[currentSongIndex - 1]);
     }
 });
 
 nextButton.addEventListener("click", function() {
-    if (currentSongIndex < songs.length - 1) {
-        openSong(songs[currentSongIndex + 1]);
+    if (currentSongIndex < availableSongs.length - 1) {
+        openSong(availableSongs[currentSongIndex + 1]);
     }
 });
