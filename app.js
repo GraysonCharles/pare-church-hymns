@@ -107,7 +107,10 @@ const sidebar = document.getElementById("sidebar");
 menuButton.addEventListener("click", function() {
     sidebar.classList.toggle("active");
 });
-
+// BUTTON DECLARATIONS
+const homeButton = document.getElementById("homeButton");
+const searchButton = document.getElementById("searchButton");
+const favoriteButton = document.getElementById("favoriteButton");
 // HOME BUTTON
 homeButton.addEventListener("click", function() {
     showFavorites = false;
