@@ -9,7 +9,7 @@ const prevButton = document.getElementById("prevButton");
 const nextButton = document.getElementById("nextButton");
 
 let currentSongIndex = 0;
-const availableSongs = songs.filter(song => song.title.trim() !== "");
+const availableSongs = songs;
 // FAVORITES SYSTEM
 let favorites = JSON.parse(localStorage.getItem("pareFavorites")) || [];
 let showFavorites = false;
