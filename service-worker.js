@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "pare-hymns-v2";
+const CACHE_NAME = "pare-hymns-v3";
 
 const FILES_TO_CACHE = [
     "./",
