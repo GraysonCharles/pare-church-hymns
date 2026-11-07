@@ -72,13 +72,28 @@ function openSong(song) {
 
     songReader.style.display = "block";
     songTitle.textContent = "Wimbo Na. " + song.id + " - " + song.title;
+    songFavoriteButton.textContent =
+    favorites.includes(song.id) ? "❤️" : "♡";
     songImage.src = song.image;
 currentSongIndex = availableSongs.findIndex(item => item.id === song.id);
 
 prevButton.disabled = currentSongIndex <= 0;
 nextButton.disabled = currentSongIndex >= availableSongs.length - 1;
 }
+songFavoriteButton.addEventListener("click", function() {
+    const songId = availableSongs[currentSongIndex].id;
 
+    if (favorites.includes(songId)) {
+        favorites = favorites.filter(id => id !== songId);
+    } else {
+        favorites.push(songId);
+    }
+
+    saveFavorites();
+
+    songFavoriteButton.textContent =
+        favorites.includes(songId) ? "❤️" : "♡";
+});
 backButton.addEventListener("click", function() {
     songReader.style.display = "none";
     songList.style.display = "grid";
@@ -112,6 +127,7 @@ menuButton.addEventListener("click", function() {
 const homeButton = document.getElementById("homeButton");
 const searchButton = document.getElementById("searchButton");
 const favoriteButton = document.getElementById("favoriteButton");
+const songFavoriteButton = document.getElementById("songFavoriteButton");
 // HOME BUTTON
 homeButton.addEventListener("click", function() {
     showFavorites = false;
