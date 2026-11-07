@@ -152,7 +152,7 @@ favoriteButton.addEventListener("click", function() {
     songList.style.display = "grid";
 
     const favoriteSongs = songs.filter(function(song) {
-        return favorites.includes(song.id) && song.title.trim() !== "";
+        return favorites.includes(song.id)
     });
 
     displaySongs(favoriteSongs);
