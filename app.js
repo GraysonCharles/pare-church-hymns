@@ -11,7 +11,8 @@ const nextButton = document.getElementById("nextButton");
 let currentSongIndex = 0;
 const availableSongs = songs;
 // FAVORITES SYSTEM
-let favorites = JSON.parse(localStorage.getItem("pareFavorites")) || [];
+let favorites = (JSON.parse(localStorage.getItem("pareFavorites")) || [])
+    .map(Number);
 let showFavorites = false;
 
 function saveFavorites() {
