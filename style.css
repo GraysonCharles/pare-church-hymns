@@ -265,3 +265,47 @@ body.dark-mode #sidebar {
     cursor: pointer;
     padding: 8px;
 }
+/* FAVORITE BUTTON - DARK MODE FIX */
+
+#songFavoriteButton {
+    color: #777777;
+    border: 2px solid #999999;
+    border-radius: 50%;
+    background: transparent;
+    min-width: 45px;
+    min-height: 45px;
+}
+
+#songFavoriteButton:hover {
+    border-color: #d9a441;
+    transform: scale(1.1);
+}
+
+.favoriteToggle {
+    color: #777777 !important;
+    border: 2px solid #999999 !important;
+    border-radius: 50%;
+    background: transparent !important;
+    min-width: 45px;
+    min-height: 45px;
+}
+
+.favoriteToggle.saved {
+    color: red !important;
+}
+
+body.dark-mode #songFavoriteButton {
+    color: #ffffff;
+    border: 2px solid #eeeeee;
+}
+
+body.dark-mode .favoriteToggle {
+    color: #ffffff !important;
+    border: 2px solid #eeeeee !important;
+}
+
+body.dark-mode #songFavoriteButton.saved,
+body.dark-mode .favoriteToggle.saved {
+    color: #ff5252 !important;
+    border-color: #ff5252 !important;
+}
