@@ -247,3 +247,21 @@ body.dark-mode #sidebar {
     cursor: pointer;
     padding: 8px;
 }
+.song-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.song-heading h2 {
+    margin: 0;
+}
+
+#songFavoriteButton {
+    font-size: 28px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
