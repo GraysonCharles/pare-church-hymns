@@ -218,10 +218,10 @@ main h2 {
 .favoriteToggle,
 #songFavoriteButton {
     display: inline-block;
-    background: transparent;
-    color: #777777;
-    border: 1px solid #999999;
-    border-radius: 6px;
+    background: transparent !important;
+    color: #777777 !important;
+    border: none !important;
+    outline: none;
     font-family: Arial, sans-serif;
     font-size: 28px;
     cursor: pointer;
@@ -232,60 +232,27 @@ main h2 {
 .favoriteToggle:hover,
 #songFavoriteButton:hover {
     transform: scale(1.1);
-    border-color: #d9a441;
 }
 
 .favoriteToggle.saved,
 #songFavoriteButton.saved {
-    color: red;
-    border-color: red;
+    color: red !important;
 }
 
 /* ==============================
    DARK MODE
 ============================== */
 
-body.dark-mode {
-    background-color: #121212;
-    color: #eeeeee;
+body.dark-mode .favoriteToggle,
+body.dark-mode #songFavoriteButton {
+    color: white !important;
+    border: none !important;
 }
 
-body.dark-mode header {
-    background-color: #1e1e1e;
+body.dark-mode .favoriteToggle.saved,
+body.dark-mode #songFavoriteButton.saved {
+    color: #ff5252 !important;
 }
-
-body.dark-mode header p {
-    color: #cccccc;
-}
-
-body.dark-mode main h2 {
-    color: #eeeeee;
-}
-
-body.dark-mode .song-card {
-    background-color: #242424;
-    color: #eeeeee;
-    border-color: #444444;
-}
-
-body.dark-mode .song-card h3 {
-    color: #d9a441;
-}
-
-body.dark-mode #searchInput {
-    background-color: #242424;
-    color: white;
-    border-color: #555555;
-}
-
-body.dark-mode #songReader {
-    color: white;
-}
-
-body.dark-mode #sidebar {
-    background-color: #1e1e1e;
-}
-
 /* FAVORITE IN DARK MODE */
 
 body.dark-mode .favoriteToggle,
