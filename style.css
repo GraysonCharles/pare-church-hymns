@@ -1,3 +1,8 @@
+
+/* ==============================
+   GENERAL SETTINGS
+============================== */
+
 * {
     box-sizing: border-box;
 }
@@ -9,6 +14,10 @@ body {
     background-color: #f4f6f2;
     color: #20352c;
 }
+
+/* ==============================
+   HEADER
+============================== */
 
 header {
     background-color: #174d3b;
@@ -27,6 +36,10 @@ header p {
     color: #d8e8df;
 }
 
+/* ==============================
+   MAIN CONTENT
+============================== */
+
 main {
     max-width: 850px;
     margin: 30px auto;
@@ -38,6 +51,14 @@ main h2 {
     font-size: 26px;
 }
 
+#mainContent {
+    min-height: 100vh;
+}
+
+/* ==============================
+   SEARCH
+============================== */
+
 #searchInput {
     width: 100%;
     padding: 15px;
@@ -47,6 +68,10 @@ main h2 {
     margin: 15px 0;
     outline-color: #174d3b;
 }
+
+/* ==============================
+   SONG LIST
+============================== */
 
 #songList {
     display: grid;
@@ -71,7 +96,11 @@ main h2 {
     color: #174d3b;
     margin-top: 0;
 }
-/* MENU BUTTON */
+
+/* ==============================
+   MENU BUTTON
+============================== */
+
 #menuButton {
     position: fixed;
     top: 15px;
@@ -86,7 +115,10 @@ main h2 {
     cursor: pointer;
 }
 
-/* SIDEBAR */
+/* ==============================
+   SIDEBAR
+============================== */
+
 #sidebar {
     position: fixed;
     top: 0;
@@ -127,12 +159,10 @@ main h2 {
     background: #d9a441;
 }
 
-/* MAIN CONTENT */
-#mainContent {
-    min-height: 100vh;
-}
+/* ==============================
+   SONG IMAGE
+============================== */
 
-/* SONG IMAGE */
 #songImage {
     width: 100%;
     max-width: 700px;
@@ -140,37 +170,80 @@ main h2 {
     margin: 20px auto;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-    main {
-        padding: 15px;
-    }
+/* ==============================
+   IMAGE NAVIGATION
+============================== */
 
-    header {
-        padding-top: 65px;
-    }
+.image-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.favoriteToggle {
-    display: inline-block;
-    background: transparent !important;
-    border: none !important;
-    color: #999 !important;
-    font-family: Arial, sans-serif;
-    font-size: 30px;
+.image-navigation img {
+    max-width: 80%;
+    height: auto;
+}
+
+.image-navigation button {
+    padding: 10px 15px;
+    font-size: 22px;
     cursor: pointer;
-    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #174d3b;
+    color: white;
+}
+
+/* ==============================
+   SONG HEADING
+============================== */
+
+.song-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.song-heading h2 {
+    margin: 0;
+}
+
+/* ==============================
+   FAVORITE BUTTONS
+============================== */
+
+.favoriteToggle,
+#songFavoriteButton {
+    display: inline-block;
+    background: transparent;
+    color: #777777;
+    border: 1px solid #999999;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px 8px;
     margin-top: 10px;
 }
 
-.favoriteToggle:hover {
-    transform: scale(1.2);
+.favoriteToggle:hover,
+#songFavoriteButton:hover {
+    transform: scale(1.1);
+    border-color: #d9a441;
 }
 
-.favoriteToggle.saved {
-    color: red !important;
+.favoriteToggle.saved,
+#songFavoriteButton.saved {
+    color: red;
+    border-color: red;
 }
-/* DARK MODE */
+
+/* ==============================
+   DARK MODE
+============================== */
 
 body.dark-mode {
     background-color: #121212;
@@ -179,6 +252,10 @@ body.dark-mode {
 
 body.dark-mode header {
     background-color: #1e1e1e;
+}
+
+body.dark-mode header p {
+    color: #cccccc;
 }
 
 body.dark-mode main h2 {
@@ -208,104 +285,39 @@ body.dark-mode #songReader {
 body.dark-mode #sidebar {
     background-color: #1e1e1e;
 }
-.image-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
 
-.image-navigation img {
-    max-width: 80%;
-    height: auto;
-}
+/* FAVORITE IN DARK MODE */
 
-.image-navigation button {
-    padding: 10px 15px;
-    font-size: 22px;
-    cursor: pointer;
-    border: none;
-    border-radius: 8px;
-    background: #174d3b;
-    color: white;
-}
-.song-heading {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.song-heading h2 {
-    margin: 0;
-}
-
-#songFavoriteButton {
-    font-size: 28px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-}
-.song-heading {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.song-heading h2 {
-    margin: 0;
-}
-
-#songFavoriteButton {
-    font-size: 28px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-}
-/* FAVORITE BUTTON - DARK MODE FIX */
-
-#songFavoriteButton {
-    color: #777777;
-    border: 2px solid #999999;
-    border-radius: 50%;
-    background: transparent;
-    min-width: 45px;
-    min-height: 45px;
-}
-
-#songFavoriteButton:hover {
-    border-color: #d9a441;
-    transform: scale(1.1);
-}
-
-.favoriteToggle {
-    color: #777777 !important;
-    border: 2px solid #999999 !important;
-    border-radius: 50%;
-    background: transparent !important;
-    min-width: 45px;
-    min-height: 45px;
-}
-
-.favoriteToggle.saved {
-    color: red !important;
-}
-
+body.dark-mode .favoriteToggle,
 body.dark-mode #songFavoriteButton {
     color: #ffffff;
-    border: 2px solid #eeeeee;
+    border-color: #eeeeee;
 }
 
-body.dark-mode .favoriteToggle {
-    color: #ffffff !important;
-    border: 2px solid #eeeeee !important;
+body.dark-mode .favoriteToggle.saved,
+body.dark-mode #songFavoriteButton.saved {
+    color: #ff5252;
+    border-color: #ff5252;
 }
 
-body.dark-mode #songFavoriteButton.saved,
-body.dark-mode .favoriteToggle.saved {
-    color: #ff5252 !important;
-    border-color: #ff5252 !important;
+/* ==============================
+   MOBILE RESPONSIVENESS
+============================== */
+
+@media (max-width: 600px) {
+    main {
+        padding: 15px;
+    }
+
+    header {
+        padding-top: 65px;
+    }
+
+    .image-navigation {
+        gap: 5px;
+    }
+
+    .image-navigation img {
+        max-width: 75%;
+    }
 }
