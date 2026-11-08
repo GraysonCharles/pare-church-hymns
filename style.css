@@ -213,6 +213,7 @@ main h2 {
 
 /* ==============================
    FAVORITE BUTTONS
+   NO BORDER
 ============================== */
 
 .favoriteToggle,
@@ -222,6 +223,7 @@ main h2 {
     color: #777777 !important;
     border: none !important;
     outline: none;
+    box-shadow: none !important;
     font-family: Arial, sans-serif;
     font-size: 28px;
     cursor: pointer;
@@ -243,28 +245,68 @@ main h2 {
    DARK MODE
 ============================== */
 
+body.dark-mode {
+    background-color: #121212;
+    color: #eeeeee;
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode header p {
+    color: #cccccc;
+}
+
+body.dark-mode main h2 {
+    color: #eeeeee;
+}
+
+body.dark-mode .song-card {
+    background-color: #242424;
+    color: #eeeeee;
+    border-color: #444444;
+}
+
+body.dark-mode .song-card h3 {
+    color: #d9a441;
+}
+
+body.dark-mode #searchInput {
+    background-color: #242424;
+    color: white;
+    border-color: #555555;
+}
+
+body.dark-mode #songReader {
+    color: white;
+}
+
+body.dark-mode #sidebar {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode #sidebar button {
+    background-color: #292929;
+    color: white;
+}
+
+body.dark-mode #sidebar button:hover {
+    background-color: #d9a441;
+}
+
+/* DARK MODE FAVORITES */
+
 body.dark-mode .favoriteToggle,
 body.dark-mode #songFavoriteButton {
-    color: white !important;
+    color: #ffffff !important;
     border: none !important;
+    background: transparent !important;
 }
 
 body.dark-mode .favoriteToggle.saved,
 body.dark-mode #songFavoriteButton.saved {
     color: #ff5252 !important;
-}
-/* FAVORITE IN DARK MODE */
-
-body.dark-mode .favoriteToggle,
-body.dark-mode #songFavoriteButton {
-    color: #ffffff;
-    border-color: #eeeeee;
-}
-
-body.dark-mode .favoriteToggle.saved,
-body.dark-mode #songFavoriteButton.saved {
-    color: #ff5252;
-    border-color: #ff5252;
 }
 
 /* ==============================
@@ -272,6 +314,7 @@ body.dark-mode #songFavoriteButton.saved {
 ============================== */
 
 @media (max-width: 600px) {
+
     main {
         padding: 15px;
     }
